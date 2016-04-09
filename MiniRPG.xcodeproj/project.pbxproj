@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92CDEA7C1CB8A929000B05D4 /* NPCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CDEA7B1CB8A929000B05D4 /* NPCManager.m */; };
+		92CDEA7F1CB8B062000B05D4 /* ChatBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CDEA7E1CB8B062000B05D4 /* ChatBox.m */; };
 		C7E7C25A16B2D6E50065EF4C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E7C25916B2D6E50065EF4C /* QuartzCore.framework */; };
 		C7E7C25C16B2D6E50065EF4C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E7C25B16B2D6E50065EF4C /* OpenGLES.framework */; };
 		C7E7C25E16B2D6E50065EF4C /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E7C25D16B2D6E50065EF4C /* OpenAL.framework */; };
@@ -178,6 +180,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92CDEA7A1CB8A929000B05D4 /* NPCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCManager.h; sourceTree = "<group>"; };
+		92CDEA7B1CB8A929000B05D4 /* NPCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPCManager.m; sourceTree = "<group>"; };
+		92CDEA7D1CB8B062000B05D4 /* ChatBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatBox.h; sourceTree = "<group>"; };
+		92CDEA7E1CB8B062000B05D4 /* ChatBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatBox.m; sourceTree = "<group>"; };
 		C7E7C25516B2D6E50065EF4C /* MiniRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E7C25916B2D6E50065EF4C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C7E7C25B16B2D6E50065EF4C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -573,6 +579,10 @@
 				C7E7C3F416B2D7CC0065EF4C /* config.h */,
 				C7E7C3F116B2D7970065EF4C /* GameLayer.h */,
 				C7E7C3F216B2D7970065EF4C /* GameLayer.m */,
+				92CDEA7A1CB8A929000B05D4 /* NPCManager.h */,
+				92CDEA7B1CB8A929000B05D4 /* NPCManager.m */,
+				92CDEA7D1CB8B062000B05D4 /* ChatBox.h */,
+				92CDEA7E1CB8B062000B05D4 /* ChatBox.m */,
 				C7E7C26C16B2D6E60065EF4C /* Resources */,
 				C7E7C28616B2D6E60065EF4C /* libs */,
 				C7E7C3DF16B2D6E80065EF4C /* Supporting Files */,
@@ -1142,6 +1152,7 @@
 				C7E7C29316B2D6E60065EF4C /* CCActionEase.m in Sources */,
 				C7E7C29616B2D6E60065EF4C /* CCActionGrid.m in Sources */,
 				C7E7C29916B2D6E60065EF4C /* CCActionGrid3D.m in Sources */,
+				92CDEA7F1CB8B062000B05D4 /* ChatBox.m in Sources */,
 				C7E7C29C16B2D6E60065EF4C /* CCActionInstant.m in Sources */,
 				C7E7C29F16B2D6E60065EF4C /* CCActionInterval.m in Sources */,
 				C7E7C2A216B2D6E60065EF4C /* CCActionManager.m in Sources */,
@@ -1179,6 +1190,7 @@
 				C7E7C30516B2D6E70065EF4C /* CCRenderTexture.m in Sources */,
 				C7E7C30816B2D6E70065EF4C /* CCScene.m in Sources */,
 				C7E7C30B16B2D6E70065EF4C /* CCScheduler.m in Sources */,
+				92CDEA7C1CB8A929000B05D4 /* NPCManager.m in Sources */,
 				C7E7C31B16B2D6E70065EF4C /* CCShaderCache.m in Sources */,
 				C7E7C31E16B2D6E70065EF4C /* ccShaders.m in Sources */,
 				C7E7C32116B2D6E70065EF4C /* CCSprite.m in Sources */,

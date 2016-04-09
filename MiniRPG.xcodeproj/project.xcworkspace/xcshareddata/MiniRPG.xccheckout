@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B9355221-904F-4A42-A61E-023E08C44CB3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MiniRPG</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4119E49672ABDA8C35C34E7DBFDFCA4514253CCF</key>
+		<string>https://github.com/mebobby2/mini_rpg.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MiniRPG.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4119E49672ABDA8C35C34E7DBFDFCA4514253CCF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mebobby2/mini_rpg.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4119E49672ABDA8C35C34E7DBFDFCA4514253CCF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4119E49672ABDA8C35C34E7DBFDFCA4514253CCF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MiniRPG</string>
+		</dict>
+	</array>
+</dict>
+</plist>
