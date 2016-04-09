@@ -15,13 +15,17 @@
 #import "CCAnimate+SequenceLoader.h"
 #import "CCAnimation+SequenceLoader.h"
 
+#import "NPCManager.h"
+
 @interface GameLayer ()
 @property(nonatomic, strong) CCTMXTiledMap *tileMap;
 @property(nonatomic, strong) CCSprite *hero;
 @property (nonatomic, strong) CCTMXLayer *metaLayer;
 @property(nonatomic) BOOL canWalk;
 @property(nonatomic) float tileSize;
-
+@property (nonatomic, strong) CCTMXObjectGroup *exitGroup;
+@property(nonatomic, strong) CCTMXLayer *npcLayer;
+@property(nonatomic, strong) NPCManager *npcManager;
 @end
 
 
@@ -48,6 +52,7 @@
 -(id) init
 {
 	if( (self=[super init]) ) {
+        self.npcManager = [[NPCManager alloc] initWithGameLayer:self];
         
         // start in the room always
         NSString *filename = [NSString stringWithFormat:kStartingRoom];
@@ -94,7 +99,9 @@
     self.metaLayer = [self.tileMap layerNamed:@"meta"];   
     self.metaLayer.visible = NO;    
     self.tileSize = self.tileMap.tileSize.width;
-    
+    self.exitGroup = [self.tileMap objectGroupNamed:@"exits"];
+    self.npcLayer = [self.tileMap layerNamed:@"npc"];
+    [self.npcManager loadNPCsForTileMap:self.tileMap named:name];
 }
 
 /**
@@ -163,6 +170,14 @@
         }
     }
     
+    tileGid = [self.npcLayer tileGIDAt:tileCoord];
+    if (tileGid) {
+        NSDictionary *properties = [self.tileMap propertiesForGID:tileGid];
+        NSString *name = [properties objectForKey:@"name"];
+        [self.npcManager interactWithNPCNamed:name];
+        return;
+    }
+    
     self.canWalk = NO;
     
     // Animate the player
@@ -199,6 +214,20 @@
 - (void) heroIsDoneWalking
 {
     self.canWalk = YES;
+    
+    NSArray *exits = self.exitGroup.objects;
+    for (NSDictionary *exit in exits) {
+        CGRect exitRect = CGRectMake([exit[@"x"] floatValue], [exit[@"y"] floatValue], [exit[@"width"] floatValue], [exit[@"height"] floatValue]);
+        
+        if (CGRectContainsPoint(exitRect, self.hero.position)) {
+            NSString *name = exit[@"destination"];
+            CGPoint heroPoint = CGPointMake([exit[@"startx"] floatValue] * self.tileSize + (self.tileSize/2),
+                                            [exit[@"starty"] floatValue] * self.tileSize + (self.tileSize/2));
+            self.hero.position = heroPoint;
+            [self loadMapNamed:name];
+            return;
+        }
+    }
 }
 
 /**
