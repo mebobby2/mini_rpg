@@ -9,7 +9,7 @@ function soldier:new(game)
 end
 
 function soldier:interact()
-    print "Hello soldier!"
+self.game:npc_say("soldier", "please, save the princess!")
 end
 
 soldier = soldier:new(game)

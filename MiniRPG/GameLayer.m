@@ -17,6 +17,8 @@
 
 #import "NPCManager.h"
 
+#import "ChatBox.h"
+
 @interface GameLayer ()
 @property(nonatomic, strong) CCTMXTiledMap *tileMap;
 @property(nonatomic, strong) CCSprite *hero;
@@ -26,6 +28,7 @@
 @property (nonatomic, strong) CCTMXObjectGroup *exitGroup;
 @property(nonatomic, strong) CCTMXLayer *npcLayer;
 @property(nonatomic, strong) NPCManager *npcManager;
+@property(nonatomic, strong) ChatBox *chatbox;
 @end
 
 
@@ -78,6 +81,11 @@
 	}
 	return self;
 }
+
+-(void)npc:(NSString*)npc say:(NSString*)text {
+    self.chatbox = [[ChatBox alloc] initWithNPC:(NSString *)npc text:text];
+    [self.parent addChild:self.chatbox];
+    [self.chatbox advanceTextOrHide];}
 
 /**
  * Loads a tilemap from the bundle path with a given name.
@@ -140,6 +148,11 @@
  */
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    if (self.chatbox && self.chatbox.visible) {
+        [self.chatbox advanceTextOrHide];
+        return NO;
+    }
+    
 	return YES;
 }
 
