@@ -156,6 +156,19 @@
 	return YES;
 }
 
+- (void) setMeta:(NSString *)value forKey:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:value forKey:key];
+    [defaults synchronize];
+}
+
+- (NSString *) getMetaValueForKey:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:key];
+}
+
 /**
  * Moves the player to a given position. Also performs collision detection
  * against the meta layer for tiles with the property "Collidable" set
